@@ -1,0 +1,34 @@
+consumer:
+  account_id: "234665"
+  name: "alf"
+  environment: "prod"
+principals:
+  - name: "data-engineer-role"
+    type: "sso-role"
+    permissions:
+      - DESCRIBE
+      - SELECT
+      - DATA_LOCATION_ACCESS
+      - ASSOCIATE
+      - ALTER
+    lf_tags:
+      - key: domain
+        values:
+          - hello
+      - key: classification
+        values:
+          - public
+  - name: "glue-service-role"
+    type: "iam-role"
+    permissions:
+      - DESCRIBE
+      - SELECT
+      - ALTER
+      - CREATE_TABLE
+      - DROP
+      - INSERT
+      - DELETE
+    lf_tags:
+      - key: domain
+        values:
+          - wthr
