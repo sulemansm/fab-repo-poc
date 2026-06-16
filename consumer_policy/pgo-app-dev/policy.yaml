@@ -1,0 +1,33 @@
+FAB_VERSION: 2.0.0
+CONTACT_EMAIL_ADDRESS: sulemansmathekar@gmail.com
+CONSUMER_AWS_ACCOUNT:
+  dev: '12345678'
+CONSUMER_PRODUCT_NAME: pgo-app
+CONSUMER_ENV: dev
+
+PRODUCER_AWS_ACCOUNT:
+  prod: '23456789'
+PRODUCER_PRODUCT_NAME: ewdp
+
+DATABASES:
+  ewdp_${ENV}:
+    DATA_SOURCE: s3
+    RESOURCE_LINK_DB: ewdp_${ENV}
+
+PRINCIPALS:
+  'dev:AWSReserved_SSO_dataengineer_role':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+  'dev:AWSReserved_SSO_support_role':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+  'glue-crawler-role':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+  'glue-service-role':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
