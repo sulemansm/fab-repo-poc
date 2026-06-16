@@ -1,0 +1,47 @@
+FAB_VERSION: 2.0.0
+CONTACT_EMAIL_ADDRESS: sulemansmathekar@gmail.com
+CONSUMER_AWS_ACCOUNT:
+  dev: '123456'
+CONSUMER_PRODUCT_NAME: alf
+CONSUMER_ENV: dev
+
+PRODUCER_AWS_ACCOUNT:
+  prod: '09876'
+PRODUCER_PRODUCT_NAME: ewdp
+
+DATABASES:
+  ewdp_${ENV}:
+    DATA_SOURCE: s3
+    RESOURCE_LINK_DB: ewdp_${ENV}
+
+PRINCIPALS:
+  'dev:AWSReservedSSO_support_99b9c84ce454892d':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+          e:gov:domain: comn
+          e:gov:subdomain:comn: wthr
+          e:gov:data_security_classification: public
+          e:it:data_product_type: raw
+  'glue-service-role':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+          e:gov:domain: comn
+          e:gov:data_security_classification: public
+  'dev:AWSReservedSSO_data-engineer_be84b716f30c9771':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+          e:gov:domain: comn
+          e:gov:subdomain:comn: wthr
+          e:gov:data_security_classification: public
+          e:it:data_product_type: raw
+  'data-engineer-role':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+          e:gov:domain: comn
+          e:gov:subdomain:comn: wthr
+          e:gov:data_security_classification: public
+          e:it:data_product_type: raw
