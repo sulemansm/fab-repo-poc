@@ -1,0 +1,33 @@
+FAB_VERSION: 2.0.0
+CONTACT_EMAIL_ADDRESS: suleman.mathekar@godigitaltc.com
+CONSUMER_AWS_ACCOUNT:
+  prod: '32456789'
+CONSUMER_PRODUCT_NAME: svss
+CONSUMER_ENV: prod
+
+PRODUCER_AWS_ACCOUNT:
+  prod: '09080766'
+PRODUCER_PRODUCT_NAME: ewdp
+
+DATABASES:
+  ewdp_${ENV}:
+    DATA_SOURCE: s3
+    RESOURCE_LINK_DB: ewdp_${ENV}
+
+PRINCIPALS:
+  'prod:AWS_dataengineerrole':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+          e:gov:domain: comn
+          e:gov:subdomain:comn: wthr
+          e:gov:data_security_classification: public
+          e:it:data_product_type: raw
+  'lambda-execution-role-prod':
+    READ:
+      LF_TAG_PERMISSIONS:
+        EXPRESSION_1:
+          e:gov:domain: comn
+          e:gov:subdomain:comn: wthr
+          e:gov:data_security_classification: public
+          e:it:data_product_type: raw
